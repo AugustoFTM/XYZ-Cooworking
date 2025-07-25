@@ -1,0 +1,179 @@
+/*Fontes importadas*/
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Michroma&family=Special+Gothic+Expanded+One&display=swap');
+
+/* Reset padrão para tirar espaçamentos e aplicar a fonte */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Define fundo preto e centraliza conteúdo */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*background de fundo com particulas*/
+
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;            /* Fica atrás do conteúdo */
+  background: #000000;    /* Fundo preto */
+}
+
+/* Container principal com efeito 3D */
+.container {
+    width: 500px;
+    height: 500px;
+    background: #111;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    perspective: 1200px;
+    /* Cria profundidade para o 3D */
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    user-select: none;
+    cursor: default;
+}
+
+/* Card rotativo com transição suave */
+.card {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    /* Mantém profundidade nos filhos */
+    transition: transform 1s;
+    position: relative;
+}
+
+/* Cada face ocupa toda a área do card */
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    backface-visibility: hidden;
+    /* Oculta a face de trás */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Face de login */
+.login {
+    background: #111;
+    color: #fff;
+}
+
+/* Face de cadastro rotacionada 180° */
+.cadastro {
+    background: #111;
+    color: #fff;
+    transform: rotateY(180deg);
+}
+
+/* Aplica rotação no card ao trocar de tela */
+.container.rotate .card {
+    transform: rotateY(180deg);
+}
+
+/* Define estilo geral do formulário */
+form {
+    width: 100%;
+    max-width: 350px;
+}
+
+/* Título centralizado */
+h2 {
+    font-family: "Michroma", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #fff;
+}
+
+/* Grupo que junta input + label flutuante */
+.input-group {
+    position: relative;
+    margin: 20px 0;
+}
+
+/* Input sem bordas visíveis, só linha inferior */
+.input-group input {
+    width: 100%;
+    padding: 10px 5px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #aaa;
+    color: #fff;
+    font-size: 15px;
+    gap: 24px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Label posicionada sobre o input */
+.input-group label {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    color: #aaa;
+    pointer-events: none;
+    transition: 0.3s ease;
+    user-select: none;
+}
+
+/* Anima a label ao focar ou quando input tem texto */
+.input-group input:focus+label,
+.input-group input:not(:placeholder-shown):valid+label {
+    top: -10px;
+    font-size: 0.8rem;
+    color: #6200ff;
+}
+
+/* Estilo do botão */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #4400ff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.4s;
+    
+}
+
+/* Hover do botão */
+button:hover {
+    background-color: #6200ff;
+    box-shadow: 0 0 10px #6200ff;
+}
+
+/* Botão de alternar entre login/cadastro */
+.toggle-btn {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #ccc;
+    cursor: pointer;
+    text-decoration: none;
+    transition: .4s;
+}
+
+/* Hover no link de alternância */
+.toggle-btn:hover {
+    color: #4400ff;
+}

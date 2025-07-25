@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Login e Cadastro">
+    <title>Login & Cadastro  || XYZ Cooworking</title>
+    <link rel="stylesheet" href="assets/CSS/form.css">
+</head>
+<body>
+    <!-- fundo com particulas-->
+    <div id="particles-js"></div>
+    <!-- Container principal preto que contém tudo -->
+    <div class="container" id="container">
+
+        <!-- Card rotativo com duas faces: login e cadastro -->
+        <div class="card">
+
+            <!-- Face de login -->
+            <div class="face login">
+                <form>
+                    <h2>Login</h2>
+                    <div class="input-group">
+                        <input type="text" id="login-user" required placeholder=" " />
+                        <label for="login-user">Usuário</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="login-pass" required placeholder=" " />
+                        <label for="login-pass">Senha</label>
+                    </div>
+                    <button type="submit">Entrar</button>
+                </form>
+
+                <!-- Link para alternar para o cadastro -->
+                <p class="toggle-btn" onclick="toggleForm()">Não tem uma conta? Cadastre-se</p>
+            </div>
+
+            <!-- Face de cadastro -->
+            <div class="face cadastro">
+                <form>
+                    <h2>Cadastro</h2>
+                    <div class="input-group">
+                        <input type="text" id="cad-nome" required placeholder=" " />
+                        <label for="cad-nome">Nome completo</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="num" id="cad-num" required placeholder=" " />
+                        <label for="cad-num">N° de celular</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="cad-email" required placeholder=" " />
+                        <label for="cad-email">Email</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="cad-senha" required placeholder=" " />
+                        <label for="cad-senha">Senha</label>
+                    </div>
+                    <button type="submit">Cadastrar</button>
+                </form>
+
+                <!-- Link para alternar para o login -->
+                <p class="toggle-btn" onclick="toggleForm()">Já tem conta? Fazer login</p>
+            </div>
+        </div>
+    </div>
+    <script src="assets/componentes/particle/particles.min.js"></script>
+    <script src="assets/componentes/particle/app.js"></script>
+    <script src="assets/JS/form.js"></script>
+</body>
+
+</html>
