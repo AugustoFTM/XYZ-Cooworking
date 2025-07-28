@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Michroma&family=Special+Gothic+Expanded+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #fff;
+}
+
+header {
+    background-color: #1c1c1c;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #6200ff;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #6200ff;
+    user-select: none;
+}
+
+/* Container com imagem e nome do usuário */
+.perfil {
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+/* Estilo da imagem do usuário no canto superior direito */
+.perfil img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid #6200ff;
+}
+
+nav {
+    height: 20px;
+    display: flex;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+nav a {
+    color: #fff;
+    margin-left: 30px;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+nav a:hover,
+nav a:focus {
+    color: #7c28ff;
+    border-bottom: 2px solid #7c28ff;
+}
+
+.banner {
+    background: linear-gradient(to right, #3f00a5, #7c28ff);
+    padding: 60px 30px;
+    text-align: center;
+}
+
+.banner h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-family: "Michroma", sans-serif;
+}
+
+.banner p {
+    font-size: 1.1rem;
+    color: #eee;
+}
+
+/* Estiliza o container do carrossel */
+.caroussel-container {
+    position: relative;
+    overflow: hidden;
+    background-color: #121212;
+    padding: 20px;
+}
+
+/* Linha dos slides (estilo "faixa" horizontal) */
+.caroussel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+/* Cada slide individual */
+.slide {
+    min-width: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+/* Imagem dentro do slide */
+.slide img {
+    max-width: 100%;
+    height: 50vh;
+    border-radius: 10px;
+}
+
+/* Texto do slide */
+.slide p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+/* Botão "acessar agora" */
+.slide a {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 10px 20px;
+    background-color: #6200ff;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+/* Efeito hover no botão */
+.slide a:hover {
+    background-color: #7c28ff;
+}
+
+/* Botões de navegação (esquerda e direita) */
+.nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(98, 0, 255, 0.8);
+    color: #fff;
+    border: none;
+    padding: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+/* Efeito hover nos botões */
+.nav:hover {
+    background-color: #7c28ff;
+}
+
+/* Botão anterior (esquerda) */
+.nav.prev {
+    left: 10px;
+}
+
+/* Botão próximo (direita) */
+.nav.next {
+    right: 10px;
+}
+
+/*rodape dp site*/
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1c1c1c;
+    font-size: 0.9rem;
+    border-top: 2px solid #6200ff;
+    color: #aaa;
+}
+
+/* Para telas até 768px (ex: tablets, celulares maiores) */
+@media (max-width: 768px) {
+
+    /* Cabeçalho se adapta para coluna */
+    header {
+        align-items: flex-start;
+        padding: 15px 20px;
+    }
+
+    /* Perfil do usuário alinha à direita */
+    .perfil {
+        align-self: flex-end;
+    }
+
+    /* Reduz o tamanho da logo */
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    /* Navegação em coluna e centralizada */
+    nav {
+        align-items: center;
+        gap: 10px;
+        margin: 20px 0;
+    }
+
+    /* Links da nav centralizados e sem margem lateral */
+    nav a {
+        margin-left: 0;
+        font-size: 1rem;
+    }
+
+    /* Ajustes no banner */
+    .banner {
+        padding: 40px 20px;
+    }
+
+    .banner h1 {
+        font-size: 2rem;
+    }
+
+    .banner p {
+        font-size: 1rem;
+    }
+
+    /* Imagem do slide se adapta à largura da tela */
+    .slide img {
+        height: auto;
+        width: 100%;
+        max-height: 300px;
+    }
+
+    /* Texto do slide reduzido */
+    .slide p {
+        font-size: 1rem;
+    }
+
+    /* Botão do slide menor */
+    .slide a {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    /* Botões de navegação (setas) menores */
+    .nav {
+        padding: 10px;
+        font-size: 1.2rem;
+    }
+
+    /* Rodapé ajustado para tamanho menor */
+    footer {
+        font-size: 0.8rem;
+        padding: 15px;
+        text-align: center;
+    }
+}
+
+/* Para telas muito pequenas (até 480px) como smartphones */
+@media (max-width: 480px) {
+
+    /* Reduz o título principal */
+    .banner h1 {
+        font-size: 1.7rem;
+    }
+
+    /* Texto ainda menor */
+    .banner p {
+        font-size: 0.95rem;
+    }
+
+    /* Botão do slide ainda menor */
+    .slide a {
+        font-size: 0.85rem;
+        padding: 6px 14px;
+    }
+
+    /* Nome do usuário menor */
+    .perfil span {
+        font-size: 0.9rem;
+    }
+
+    /* Foto de perfil menor */
+    .perfil img {
+        width: 38px;
+        height: 38px;
+    }
+}
